@@ -11,6 +11,34 @@ These steps cover a local deployment of MoneyPrinterV2 for production-like use o
 - Nano Banana 2 (Gemini) API key. If missing, create a Gemini API key in Google AI Studio (https://aistudio.google.com/app/apikey), then set it in `config.json` (`nanobanana2_api_key`) or export `GEMINI_API_KEY`.
 - Optional: Go (only for Outreach / Google Maps scraping). If missing, install from https://go.dev/dl/ or `brew install go`.
 
+### Quick install commands
+
+macOS (Homebrew):
+
+```bash
+brew update
+brew install git imagemagick pyenv go ollama
+brew install --cask firefox
+pyenv install 3.12.4
+pyenv local 3.12.4
+```
+
+Debian (apt + Ollama install script):
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git curl build-essential imagemagick firefox-esr
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+If you use pyenv on Debian to get Python 3.12, install build dependencies first:
+
+```bash
+sudo apt-get install -y make libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+	libsqlite3-dev libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+	libffi-dev liblzma-dev
+```
+
 ## 1) Bootstrap the host
 
 Clone the repo and run the setup script from the repo root:
